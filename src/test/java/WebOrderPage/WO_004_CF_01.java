@@ -31,7 +31,7 @@ public class WO_004_CF_01 extends Hooks {
 		driver.findElement(By.xpath("//input[@id='discountInput']")).sendKeys("15");
 		driver.findElement(By.xpath("//button[contains(text(),'Calculate')]")).click();
 		String result = driver.findElement(By.xpath("//input[@id='totalInput']")).getAttribute("value");
-		String expected = String.valueOf((5 * 150) - ((5 * 150) * 15 / 100));
+		String expected = String.valueOf((5 * 150) - ((5 * 150) * 15 / 100.0));
 		Assertions.assertEquals(expected, result);
 	}
 
